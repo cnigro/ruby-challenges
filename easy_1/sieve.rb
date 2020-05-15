@@ -36,6 +36,6 @@ class Sieve
         end
       end
     end
-    @numbers.each_index.select { |i| @numbers[i] == true }.drop(2)
+    @numbers.each_index.select { |i| @numbers[i] }.drop(2)
   end
 end
