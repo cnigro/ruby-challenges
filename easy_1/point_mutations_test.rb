@@ -18,7 +18,7 @@ class DNATest < Minitest::Test
 
   def test_hamming_distance_in_off_by_one_strand
     # skip
-    strand = 'GGACGGATTCTGACCTGGACTAATTTTGGGG'
+    strand   = 'GGACGGATTCTGACCTGGACTAATTTTGGGG'
     distance = 'AGGACGGATTCTGACCTGGACTAATTTTGGGG'
     assert_equal 19, DNA.new(strand).hamming_distance(distance)
   end
