@@ -16,3 +16,21 @@ class Phrase
     end
   end
 end
+
+
+# Much more elegant solution (not mine)
+class Phrase
+  def initialize(string)
+    @phrase = string
+  end
+
+  def word_count
+    words.each_with_object(Hash.new(0)) do |word, hash|
+      hash[word.downcase] += 1
+    end
+  end
+
+  def words
+    @phrase.gsub(/'(\w+)'/, '\1').scan(/\w+'?\w*/)
+  end
+end

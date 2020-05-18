@@ -93,4 +93,10 @@ class PhraseTest < Minitest::Test
     }
     assert_equal counts, phrase.word_count
   end
+
+  def test_with_ending_apostrophe
+    phrase = Phrase.new("Chris'")
+    counts = { "chris'" => 1 }
+    assert_equal counts, phrase.word_count
+  end
 end
